@@ -16,7 +16,7 @@ This guide will walk you through how to create a new [next-generation](/bolt-js/
 
 When you’re finished, you’ll have this ⚡️[Bolt for JavaScript Request Time Off app](https://github.com/slack-samples/bolt-js-request-time-off) to run, modify, and make your own.
 
-If you'd like to create a simpler next-generation Bolt for Javascript application or are looking to quickstart with a simple template, follow the [Getting Started guide](/bolt-js/future/getting-started#create-app).
+If you'd like to create a simpler next-generation Bolt for JavaScript application or are looking to quickstart with a simple template, follow the [Getting Started guide](/bolt-js/future/getting-started#create-app).
 
 If you already have an existing Bolt for JavaScript application that you'd like to migrate to the next-generation platform, check out the [Migration guide](/bolt-js/future/migrate-existing-app) instead.
 </div>
@@ -60,7 +60,7 @@ You can now explore the `my-app` directory!
 ---
 ### Set up your trigger {#setup-trigger}
 
-This app comes with pre-existing functionality - Functions, Workflows and a Trigger set up to kick things off. Let's run a command to initialize that Trigger via the CLI.
+This app comes with preexisting functionality - Functions, Workflows and a Trigger set up to kick things off. Let's run a command to initialize that Trigger via the CLI.
 
 First, make sure you're in the project directory in your command line: `cd my-app`
 
@@ -94,7 +94,7 @@ You'll be prompted to select a workspace to install the app to&mdash;select the 
 Once the app is successfully run, you'll see output in your Terminal to indicate it's running, similar to what you would see with any other Bolt for JavaScript app. You can search for the `⚡️ Bolt app is running! ⚡️` message to make sure that your app has successfully started up.
 ### Trigger your app's workflow {#trigger-workflow}
 
-With your app running, access your workspace and paste the URL from the the Trigger you created in the previous step into a message in a public channel.
+With your app running, access your workspace and paste the URL from the Trigger you created in the previous step into a message in a public channel.
 
 > 💡 To make the trigger URL more widely accessible, we recommend saving the Trigger as a channel bookmark for easy access.
 
@@ -321,9 +321,9 @@ Once the function is defined, we need to create a listener for it to perform any
 
 The function listener is declared in the file [`listeners/functions/request-approval.js`](https://github.com/slack-samples/bolt-js-request-time-off/blob/main/listeners/functions/request-approval.js).
 
-In the `request-approval.js` file, we are defining a handler function, `notifyApprover`, that our listener will run when the `ApprovalFunction` is invoked. `notifyApprover` takes in the provided parameters from the function and calls the API method [`client.chat.postMessage`](https://api.slack.com/methods/chat.postMessage) to send a [Block Kit](https://api.slack.com/block-kit) message with the submitted time off information to the manager. Additional buttons to approve or deny the request are also added in to the message Block Kit&mdash;these will be handled by [Action](#action) handlers that are covered in the next section.
+In the `request-approval.js` file, we are defining a handler function, `notifyApprover`, that our listener will run when the `ApprovalFunction` is invoked. `notifyApprover` takes in the provided parameters from the function and calls the API method [`client.chat.postMessage`](https://api.slack.com/methods/chat.postMessage) to send a [Block Kit](https://api.slack.com/block-kit) message with the submitted time off information to the manager. Additional buttons to approve or deny the request are also added into the message Block Kit&mdash;these will be handled by [Action](#action) handlers that are covered in the next section.
 
-This `notifyApprover` handler function is then passed in to a new `SlackFunction` registration so that it will be called when the `ApprovalFunction is invoked:
+This `notifyApprover` handler function is then passed into a new `SlackFunction` registration so that it will be called when the `ApprovalFunction is invoked:
 ```js
 const requestApprovalFunc = new SlackFunction(ApprovalFunction.id, notifyApprover);
 ```
@@ -526,11 +526,11 @@ To learn more about actions, visit the documentation [here](/bolt-js/concepts#ac
 ---
 ### Views and modals {#views-and-modals}
 
-Additional interactivity can be added in to your next-generation Slack app through [Modals](/bolt-js/concepts#creating-modals) and [Views](/bolt-js/concepts#updating-pushing-views). Within the Request Time Off example, we can add an additional button to the time off request message a manager receives that opens a new modal.
+Additional interactivity can be added into your next-generation Slack app through [Modals](/bolt-js/concepts#creating-modals) and [Views](/bolt-js/concepts#updating-pushing-views). Within the Request Time Off example, we can add an additional button to the time off request message a manager receives that opens a new modal.
 
 Having additional interactivity such as a modal could create a pathway for more functionality in the Request Time Off flow, such as allowing a manager to send a message to the requester to get additional information or clarification before approving or denying the request officially.
 
-Let's dive in to see how we can add a new button that launches a simple modal with a corresponding view!
+Let's dive in and see how we can add a new button that launches a simple modal with a corresponding view!
 
 ![Request Time Off demo with Open Modal button](../assets/take-your-time-open-modal.gif "Request Time Off demo with Open Modal button")
 
@@ -625,7 +625,7 @@ requestApprovalFunc
 
 #### Add in view handler
 
-Now that the "Open Modal" button's action handler has been added in to the `request-approval.js` file, we can add in a view handler that will trigger additional functionality if the modal is submitted.
+Now that the "Open Modal" button's action handler has been added into the `request-approval.js` file, we can add in a view handler that will trigger additional functionality if the modal is submitted.
 
 Inside `listeners/functions`, create a new directory called `views` and within it, add a new file called `modal-submit.js`:
 ```js
