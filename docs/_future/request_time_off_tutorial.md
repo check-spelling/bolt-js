@@ -321,9 +321,9 @@ Once the function is defined, we need to create a listener for it to perform any
 
 The function listener is declared in the file [`listeners/functions/request-approval.js`](https://github.com/slack-samples/bolt-js-request-time-off/blob/main/listeners/functions/request-approval.js).
 
-In the `request-approval.js` file, we are defining a handler function, `notifyApprover`, that our listener will run when the `ApprovalFunction` is invoked. `notifyApprover` takes in the provided parameters from the function and calls the API method [`client.chat.postMessage`](https://api.slack.com/methods/chat.postMessage) to send a [Block Kit](https://api.slack.com/block-kit) message with the submitted time off information to the manager. Additional buttons to approve or deny the request are also added in to the message Block Kit&mdash;these will be handled by [Action](#action) handlers that are covered in the next section.
+In the `request-approval.js` file, we are defining a handler function, `notifyApprover`, that our listener will run when the `ApprovalFunction` is invoked. `notifyApprover` takes in the provided parameters from the function and calls the API method [`client.chat.postMessage`](https://api.slack.com/methods/chat.postMessage) to send a [Block Kit](https://api.slack.com/block-kit) message with the submitted time off information to the manager. Additional buttons to approve or deny the request are also added into the message Block Kit&mdash;these will be handled by [Action](#action) handlers that are covered in the next section.
 
-This `notifyApprover` handler function is then passed in to a new `SlackFunction` registration so that it will be called when the `ApprovalFunction is invoked:
+This `notifyApprover` handler function is then passed into a new `SlackFunction` registration so that it will be called when the `ApprovalFunction is invoked:
 ```js
 const requestApprovalFunc = new SlackFunction(ApprovalFunction.id, notifyApprover);
 ```
@@ -526,7 +526,7 @@ To learn more about actions, visit the documentation [here](/bolt-js/concepts#ac
 ---
 ### Views and modals {#views-and-modals}
 
-Additional interactivity can be added in to your next-generation Slack app through [Modals](/bolt-js/concepts#creating-modals) and [Views](/bolt-js/concepts#updating-pushing-views). Within the Request Time Off example, we can add an additional button to the time off request message a manager receives that opens a new modal.
+Additional interactivity can be added into your next-generation Slack app through [Modals](/bolt-js/concepts#creating-modals) and [Views](/bolt-js/concepts#updating-pushing-views). Within the Request Time Off example, we can add an additional button to the time off request message a manager receives that opens a new modal.
 
 Having additional interactivity such as a modal could create a pathway for more functionality in the Request Time Off flow, such as allowing a manager to send a message to the requester to get additional information or clarification before approving or denying the request officially.
 
@@ -625,7 +625,7 @@ requestApprovalFunc
 
 #### Add in view handler
 
-Now that the "Open Modal" button's action handler has been added in to the `request-approval.js` file, we can add in a view handler that will trigger additional functionality if the modal is submitted.
+Now that the "Open Modal" button's action handler has been added into the `request-approval.js` file, we can add in a view handler that will trigger additional functionality if the modal is submitted.
 
 Inside `listeners/functions`, create a new directory called `views` and within it, add a new file called `modal-submit.js`:
 ```js

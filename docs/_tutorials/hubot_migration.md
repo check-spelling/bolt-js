@@ -112,7 +112,7 @@ Bolt for JavaScript uses a method called `event()` that allows you to listen to 
 ### Using Web API methods with Bolt for JavaScript {#using-web-api-methods-with-bolt-for-javascript}
 In Hubot, you needed to import the `WebClient` package from `@slack/client`. Bolt for JavaScript imports a `WebClient` instance for you by default, and exposes it as the `client` argument available on all listeners.
 
-To use the built-in `WebClient`, you’ll need to pass the token used to instantiate your app or the token associated with the team your request is coming from. This is found on the `context` object passed in to your listener functions. For example, to add a reaction to a message, you’d use:
+To use the built-in `WebClient`, you’ll need to pass the token used to instantiate your app or the token associated with the team your request is coming from. This is found on the `context` object passed into your listener functions. For example, to add a reaction to a message, you’d use:
 
 ```javascript
 app.message('react', async ({ message, context, client, logger }) => {
