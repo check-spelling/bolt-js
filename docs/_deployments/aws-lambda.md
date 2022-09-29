@@ -280,7 +280,7 @@ After your app is deployed, you'll be given an **endpoint** which you'll use as 
 Now we need to use your AWS Lambda **endpoint** as your **Request URL**, which is where Slack will send events and actions.
 With your endpoint copied, navigate to your [Slack app's configuration](https://api.slack.com/apps) to update your app's **Request URLs**.
 
-First, select **Interativity & Shortcuts** from the side and update the **Request URL**:
+First, select **Interativity & Shortcuts** from the side and update the **Request URL** :
 
 ![Interactivity & Shortcuts page](../assets/interactivity-and-shortcuts-page.png "Interactivity & Shortcuts page")
 

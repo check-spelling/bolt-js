@@ -160,13 +160,13 @@ export default class FastifyReceiver implements Receiver {
 
   private _sigingSecret: string | undefined;
 
-  private async signingSecret(): Promise<string> {
-    if (this._sigingSecret === undefined) {
-      this._sigingSecret = typeof this.signingSecretProvider === 'string' ?
+  private async signingSecret(): Promise<string> { 
+    if (this._sigingSecret === undefined) { 
+      this._sigingSecret = typeof this.signingSecretProvider === 'string' ? 
         this.signingSecretProvider :
         await this.signingSecretProvider();
     }
-    return this._sigingSecret;
+    return this._sigingSecret; 
   }
 
   public init(app: App): void {

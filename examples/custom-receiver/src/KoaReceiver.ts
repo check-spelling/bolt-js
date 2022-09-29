@@ -155,7 +155,7 @@ export default class KoaReceiver implements Receiver {
     }
   }
 
-  private _sigingSecret: string | undefined;
+  private _sigingSecret: string | undefined; 
 
   private async signingSecret(): Promise<string> {
     if (this._sigingSecret === undefined) {
@@ -163,7 +163,7 @@ export default class KoaReceiver implements Receiver {
         this.signingSecretProvider :
         await this.signingSecretProvider();
     }
-    return this._sigingSecret;
+    return this._sigingSecret; 
   }
 
   public init(app: App): void {
@@ -197,7 +197,7 @@ export default class KoaReceiver implements Receiver {
       try {
         bufferedReq = await httpFunc.parseAndVerifyHTTPRequest(
           {
-            // If enabled: false, this method returns bufferredReq without verification
+            // If enabled: false, this method returns bufferredReq without verification 
             enabled: this.signatureVerification,
             signingSecret: await this.signingSecret(),
           },
